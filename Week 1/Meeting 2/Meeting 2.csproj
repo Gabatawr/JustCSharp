@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A700B6D1-554B-4CE8-BF77-8098B19B42E3}</ProjectGuid>
+    <ProjectGuid>{5E0F4597-1C3C-4FBB-A873-02EBCA3AA302}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Meeting_1</RootNamespace>
-    <AssemblyName>Meeting 1</AssemblyName>
+    <RootNamespace>Meeting_2</RootNamespace>
+    <AssemblyName>Meeting 2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -45,11 +45,7 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Task_1.cs" />
-    <Compile Include="Task_2.cs" />
-    <Compile Include="Task_3.cs" />
-    <Compile Include="Task_4.cs" />
-    <Compile Include="Task_5.cs" />
+    <Compile Include="Train.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

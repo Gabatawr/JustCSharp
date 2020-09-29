@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meeting 1", "Meeting 1\Meeting 1.csproj", "{A700B6D1-554B-4CE8-BF77-8098B19B42E3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meeting 2", "Meeting 2\Meeting 2.csproj", "{5E0F4597-1C3C-4FBB-A873-02EBCA3AA302}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Menu", "Menu\Menu.csproj", "{AE6EBD32-6860-452B-88C6-D647017227AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{A700B6D1-554B-4CE8-BF77-8098B19B42E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A700B6D1-554B-4CE8-BF77-8098B19B42E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A700B6D1-554B-4CE8-BF77-8098B19B42E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E0F4597-1C3C-4FBB-A873-02EBCA3AA302}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E0F4597-1C3C-4FBB-A873-02EBCA3AA302}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E0F4597-1C3C-4FBB-A873-02EBCA3AA302}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E0F4597-1C3C-4FBB-A873-02EBCA3AA302}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE6EBD32-6860-452B-88C6-D647017227AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE6EBD32-6860-452B-88C6-D647017227AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE6EBD32-6860-452B-88C6-D647017227AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE6EBD32-6860-452B-88C6-D647017227AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
