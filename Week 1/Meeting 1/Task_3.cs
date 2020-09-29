@@ -15,16 +15,30 @@ namespace Meeting_1
     {
         static void UpperCase(ref String str)
         {
-            for (var i = 0; i < str.Length; i++) 
-                if (96 < str[i] && str[i] < 123) 
-                    str = str.Replace(str[i], (char)(str[i] - 32));
+            //str = str.ToUpper();
+
+            char[] arr = new char[str.Length];
+            for (var i = 0; i < arr.Length; i++)
+            {
+                if (96 < arr[i] && arr[i] < 123) arr[i] = (char)(str[i] - 32);
+                else arr[i] = str[i];
+            }
+
+            str = Convert.ToString(arr);
         }
 
         static void LowerCase(ref String str)
         {
-            for (var i = 0; i < str.Length; i++)
-                if (64 < str[i] && str[i] < 91)
-                    str = str.Replace(str[i], (char)(str[i] + 32));
+            //str = str.ToLower();
+
+            char[] arr = new char[str.Length];
+            for (var i = 0; i < arr.Length; i++)
+            {
+                if (64 < arr[i] && arr[i] < 91) arr[i] = (char)(str[i] - 32);
+                else arr[i] = str[i];
+            }
+
+            str = Convert.ToString(arr);
         }
     }
 }
