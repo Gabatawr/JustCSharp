@@ -1,8 +1,4 @@
 ﻿using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
 
 #region Description
 /*
@@ -25,26 +21,29 @@ namespace Meeting_1
 
         static void Main()
         {
-            Menu mainMenu = new Menu("Task 1", "Task 2", "Task 3", "Task 4", "Task 5", "Exit");
+            Menu menu = new Menu("Task 1", "Task 2", "Task 3", "Task 4", "Task 5", "Exit");
 
             bool loop = true;
             while (loop)
             {
-                switch (mainMenu.Run())
+                switch (menu.Run())
                 {
                     case 1: // Task 1
+                    {
                         Console.Write(" Task 1\n Enter: ");
                         Console.WriteLine($"\n Number of spaces: {SpaceCounter()}");
                         Wait();
-                        break;
+                    } break;
 
                     case 2: // Task 2
+                    {
                         Console.Write(" Task 2\n Enter: ");
                         Console.WriteLine("\n " + (IsLucky() ? "You have a lucky ticket!" : "Lucky next time.."));
                         Wait();
-                        break;
+                    } break;
 
                     case 3: // Task 3
+                    {
                         Console.Write(" Task 3\n Enter: ");
                         String str = Console.ReadLine();
 
@@ -54,17 +53,36 @@ namespace Meeting_1
                         Console.WriteLine(" To Lower:" + str);
 
                         Wait();
-                        break;
+                    } break;
 
                     case 4: // Task 4
-                        break;
+                    {
+                        Console.WriteLine(" Task 4");
+
+                        Console.Write(" Enter A: ");
+                        int A = int.Parse(Console.ReadLine() ?? string.Empty);
+
+                        Console.Write(" Enter B: ");
+                        int B = int.Parse(Console.ReadLine() ?? string.Empty);
+
+                        Console.WriteLine();
+                        NumPrint(A, B);
+
+                        Wait();
+                    } break;
 
                     case 5: // Task 5
-                        break;
+                    {
+                        Console.Write(" Task 5\n Enter: ");
+                        Console.WriteLine($" Reverse: {ReversInt(int.Parse(Console.ReadLine() ?? string.Empty))}");
+
+                        Wait();
+                    } break;
 
                     case 6:
+                    {
                         loop = false;
-                        break;
+                    } break;
                 }
             }
             

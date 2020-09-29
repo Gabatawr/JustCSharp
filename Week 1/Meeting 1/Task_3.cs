@@ -13,32 +13,32 @@ namespace Meeting_1
 {
     partial class Program
     {
-        static void UpperCase(ref String str)
+        static void UpperCase(ref string str)
         {
             //str = str.ToUpper();
 
             char[] arr = new char[str.Length];
             for (var i = 0; i < arr.Length; i++)
             {
-                if (96 < arr[i] && arr[i] < 123) arr[i] = (char)(str[i] - 32);
+                if (96 < str[i] && str[i] < 123) arr[i] = (char)(str[i] - 32);
                 else arr[i] = str[i];
             }
 
-            str = Convert.ToString(arr);
+            str = new string(arr);
         }
 
-        static void LowerCase(ref String str)
+        static void LowerCase(ref string str)
         {
             //str = str.ToLower();
 
             char[] arr = new char[str.Length];
             for (var i = 0; i < arr.Length; i++)
             {
-                if (64 < arr[i] && arr[i] < 91) arr[i] = (char)(str[i] - 32);
+                if (64 < str[i] && str[i] < 91) arr[i] = (char)(str[i] + 32);
                 else arr[i] = str[i];
             }
 
-            str = Convert.ToString(arr);
+            str = new string(arr);
         }
     }
 }
