@@ -10,18 +10,15 @@ using Gab.Menu;
  */
 #endregion
 
-namespace Meeting_2
+namespace Gab
 {
-    class Program
+    namespace Menu
     {
-        static void Main()
+        class Program
         {
-            Train train = new Train("Probivnoy", 12);
-            double fuelBarrel = 10000.0;
-
-            train.Go(ref fuelBarrel);
-
-            Console.Read();
+            static void Main()
+            {
+            }
         }
     }
 }
