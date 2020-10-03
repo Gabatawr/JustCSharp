@@ -29,7 +29,7 @@ namespace Meeting_5
         //        arr[i] = (Tank)temp?.Clone();
         //    }
         //}
-        static void CursorStartLine()
+        static void CursorBack()
         {
             int top = Console.CursorTop;
 
@@ -84,20 +84,25 @@ namespace Meeting_5
                             int result = winners[k] * array[j][i]; // Бой
 
                             Console.Write(winners[k] + "\n" + array[j][i]);
-                            Thread.Sleep(900); CursorStartLine(); Thread.Sleep(300);
+                            //Thread.Sleep(900); 
+                            CursorBack(); 
+                            //Thread.Sleep(300);
 
                             Console.Write(winners[k] + "\n" + array[j][i]);
-                            Thread.Sleep(600); CursorStartLine(); Thread.Sleep(200);
+                            //Thread.Sleep(600);
+                            CursorBack(); 
+                            //Thread.Sleep(200);
 
                             Console.Write(winners[k] + "\n" + array[j][i]);
-                            Thread.Sleep(300); CursorStartLine(); Thread.Sleep(100);
+                            //Thread.Sleep(300); 
+                            CursorBack(); 
+                            //Thread.Sleep(100);
 
                             if (result != 0)
                             {
                                 if (result > 0)
                                 {
-                                    Console.ForegroundColor = ConsoleColor.Red;   Console.Write(winners[k]);
-                                                                                  Console.WriteLine();
+                                    Console.ForegroundColor = ConsoleColor.Red;   Console.Write(winners[k] + "\n");
                                     Console.ForegroundColor = ConsoleColor.Green; Console.Write(array[j][i]);
                                     Console.ForegroundColor = ConsoleColor.White;
 
@@ -111,8 +116,7 @@ namespace Meeting_5
                                 }
                                 else
                                 {
-                                    Console.ForegroundColor = ConsoleColor.Green; Console.Write(winners[k]);
-                                                                                  Console.WriteLine();
+                                    Console.ForegroundColor = ConsoleColor.Green; Console.Write(winners[k] + "\n");
                                     Console.ForegroundColor = ConsoleColor.Red;   Console.Write(array[j][i]);
                                     Console.ForegroundColor = ConsoleColor.White;
 
@@ -121,9 +125,8 @@ namespace Meeting_5
                             }
                             else
                             {
-                                Console.ForegroundColor = ConsoleColor.Green; Console.Write(winners[k]);
-                                                                              Console.WriteLine();
-                                Console.ForegroundColor = ConsoleColor.Green; Console.Write(array[j][i]);
+                                Console.ForegroundColor = ConsoleColor.Yellow; Console.Write(winners[k] + "\n");
+                                                                               Console.Write(array[j][i]);
                                 Console.ForegroundColor = ConsoleColor.White;
 
                                 winners[++cw] = (Tank)array[j][i].Clone();
