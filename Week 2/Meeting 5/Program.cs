@@ -1,16 +1,12 @@
 ﻿using System;
-//using System.Threading;
-
 using Angar;
 
 #region Description
-
 /*
  * Тема: Обработка исключительных ситуаций. Перегрузка операторов.
  * Цель: Совершенствование навыков применения объектно-ориентированного подхода в программировании с использованием средств C#,
  *       создания пользовательских типов, использования средств обработки исключительных ситуаций и перегрузки операторов. 
  */
-
 #endregion
 
 namespace Meeting_5
@@ -41,7 +37,12 @@ namespace Meeting_5
 
             Console.SetCursorPosition(0, top - 1);
         }
-
+        static void PrintBattleResult(Tank T1, ConsoleColor C1, Tank T2, ConsoleColor C2)
+        {
+            Console.ForegroundColor = C1; Console.Write(T1 + "\n");
+            Console.ForegroundColor = C2; Console.Write(T2);
+            Console.ForegroundColor = ConsoleColor.White;
+        }
         static void Main()
         {
             Console.Write(" Enter the number of teams".PadRight(40, ' ') + ": ");
@@ -85,28 +86,13 @@ namespace Meeting_5
                             int result = winners[k] * array[j][i]; // Бой
 
                             Console.Write(winners[k] + "\n" + array[j][i]);
-                            //Thread.Sleep(900); 
-                            CursorBack(); 
-                            //Thread.Sleep(300);
-
-                            Console.Write(winners[k] + "\n" + array[j][i]);
-                            //Thread.Sleep(600);
-                            CursorBack(); 
-                            //Thread.Sleep(200);
-
-                            Console.Write(winners[k] + "\n" + array[j][i]);
-                            //Thread.Sleep(300); 
-                            CursorBack(); 
-                            //Thread.Sleep(100);
+                            CursorBack();
 
                             if (result != 0)
                             {
-                                if (result > 0)
+                                if (result > 0) // Победил первый
                                 {
-                                    Console.ForegroundColor = ConsoleColor.Red;   Console.Write(winners[k] + "\n");
-                                    Console.ForegroundColor = ConsoleColor.Green; Console.Write(array[j][i]);
-                                    Console.ForegroundColor = ConsoleColor.White;
-
+                                    PrintBattleResult(winners[k], ConsoleColor.Red, array[j][i], ConsoleColor.Green);
                                     if (cw > 0)
                                     {
                                         winners = new Tank[countTeam];
@@ -115,21 +101,15 @@ namespace Meeting_5
                                     winners[cw] = array[j][i];
                                     break;
                                 }
-                                else
+                                else // Победил второй
                                 {
-                                    Console.ForegroundColor = ConsoleColor.Green; Console.Write(winners[k] + "\n");
-                                    Console.ForegroundColor = ConsoleColor.Red;   Console.Write(array[j][i]);
-                                    Console.ForegroundColor = ConsoleColor.White;
-
+                                    PrintBattleResult(winners[k], ConsoleColor.Green, array[j][i], ConsoleColor.Red);
                                     break;
                                 }
                             }
-                            else
+                            else // Ничья
                             {
-                                Console.ForegroundColor = ConsoleColor.Yellow; Console.Write(winners[k] + "\n");
-                                                                               Console.Write(array[j][i]);
-                                Console.ForegroundColor = ConsoleColor.White;
-
+                                PrintBattleResult(winners[k], ConsoleColor.Yellow, array[j][i], ConsoleColor.Yellow);
                                 winners[++cw] = array[j][i];
                                 break;
                             }
