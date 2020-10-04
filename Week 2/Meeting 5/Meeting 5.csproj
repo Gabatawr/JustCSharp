@@ -50,6 +50,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Screenshot.png" />
     <Content Include="Task.txt" />
   </ItemGroup>
   <ItemGroup>
