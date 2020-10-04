@@ -6,7 +6,7 @@
 
 namespace Angar
 {
-    public class Tank : ICloneable
+    public class Tank
     {//------------------------------------------------------------------------
         public         string Model    { get; }
         public         int    Ammo     { get; private set; }
@@ -44,25 +44,12 @@ namespace Angar
             return balance;
         }
         //---------------------------------------------------------------------
-        public object Clone()
-        {
-            return new Tank(Model) { Ammo = this.Ammo, Armor = this.Armor, Mobility = this.Mobility };
-        }
-        //---------------------------------------------------------------------
         public override string ToString()
         {
             return (" Ammo[" + $"{Ammo}".PadLeft(3,'_') + "]," +
                     " Armor["  + $"{Armor}".PadLeft(3, '_') + "]," +
                     " Mobility[" + $"{Mobility}".PadLeft(3, '_') + "]" +
                     " | [" + Model + "]");
-        }
-        //---------------------------------------------------------------------
-        public bool Equals(Tank tank)
-        {
-            return Model    == tank.Model &&
-                   Ammo     == tank.Ammo  &&
-                   Armor    == tank.Armor &&
-                   Mobility == tank.Mobility;
         }
     }//------------------------------------------------------------------------
 }

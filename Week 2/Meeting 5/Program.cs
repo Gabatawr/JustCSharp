@@ -17,18 +17,18 @@ namespace Meeting_5
 {
     class Program
     {
-        //static void Mix(ref Tank[] arr)
-        //{
-        //    Random rand = new Random();
-        //    for (int i = arr.Length - 1; i >= 1; i--)
-        //    {
-        //        int j = rand.Next(i + 1);
+        static void Mix(ref Tank[] arr)
+        {
+            Random rand = new Random();
+            for (int i = arr.Length - 1; i >= 1; i--)
+            {
+                int j = rand.Next(i + 1);
 
-        //        Tank temp = (Tank)arr[j]?.Clone();
-        //        arr[j] = (Tank)arr[i]?.Clone();
-        //        arr[i] = (Tank)temp?.Clone();
-        //    }
-        //}
+                Tank T = arr[j];
+                arr[j] = arr[i];
+                arr[i] = T;
+            }
+        }
         static void CursorBack()
         {
             int top = Console.CursorTop;
@@ -55,6 +55,7 @@ namespace Meeting_5
             //-----------------------------------------------------------------
             Console.Write((" Enter " + countTeam + " models").PadRight(40, ' ') + ": ");
             string[] arrModel = Console.ReadLine().Split(new[] { ' ', ',', ';', '.' }, StringSplitOptions.RemoveEmptyEntries);
+            Console.CursorVisible = false;
             //-----------------------------------------------------------------
             Tank[][] array = new Tank[countTeam][];
             for (var i = 0; i < array.Length; i++)
@@ -73,7 +74,7 @@ namespace Meeting_5
                 {
                     Tank[] winners = new Tank[countTeam];
                     int cw = 0; // Количество победителей
-                    winners[cw] = (Tank)array[0][i].Clone();
+                    winners[cw] = array[0][i];
 
                     // Боевое столкновение, сохранение списка победителей
                     for (int j = 1; j < countTeam; j++)
@@ -111,7 +112,7 @@ namespace Meeting_5
                                         winners = new Tank[countTeam];
                                         cw = 0;
                                     }
-                                    winners[cw] = (Tank)array[j][i].Clone();
+                                    winners[cw] = array[j][i];
                                     break;
                                 }
                                 else
@@ -129,7 +130,7 @@ namespace Meeting_5
                                                                                Console.Write(array[j][i]);
                                 Console.ForegroundColor = ConsoleColor.White;
 
-                                winners[++cw] = (Tank)array[j][i].Clone();
+                                winners[++cw] = array[j][i];
                                 break;
                             }
                         }
@@ -165,7 +166,7 @@ namespace Meeting_5
                     {
                         arrTmp[i] = new Tank[array[i].Length - countNull];
                         for (int j = 0, k = 0; j < array[i].Length; j++)
-                            if (array[i][j] != null) arrTmp[i][k++] = (Tank)array[i][j].Clone();
+                            if (array[i][j] != null) arrTmp[i][k++] = array[i][j];
                     }
                     else countTeam--;
                 }
@@ -181,7 +182,7 @@ namespace Meeting_5
                         {
                             arrTmp[k] = new Tank[array[i].Length];
                             for (int j = 0; j < array[i].Length; j++)
-                                arrTmp[k][j] = (Tank)array[i][j].Clone();
+                                arrTmp[k][j] = array[i][j];
                             k++;
                         }
                     }
@@ -201,7 +202,10 @@ namespace Meeting_5
                     if (i != countTeam - 1) Console.Write("\n" + "".PadLeft(39, '-') + '\n');
                 }
 
-                Console.Write("\n\n 'Enter' to next battle..\n\n");
+                // Перемешать технику внутри команд
+                for (var i = 0; i < array.Length; i++) Mix(ref array[i]);
+
+                Console.Write("\n\n 'Enter' to next battle..\n");
                 while (Console.ReadKey(true).Key != ConsoleKey.Enter);
             }
             //-----------------------------------------------------------------
