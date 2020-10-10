@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2D81EE35-B115-4808-89EC-54968B2C8F17}</ProjectGuid>
+    <ProjectGuid>{641D8816-72AA-4A47-9B4D-FD62CD64A8AE}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>CW</RootNamespace>
-    <AssemblyName>CW</AssemblyName>
+    <RootNamespace>Meeting_6</RootNamespace>
+    <AssemblyName>Meeting 6</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -22,7 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>8</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,12 +32,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>8</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="OperationTimer">
-      <HintPath>..\..\GabLib\OperationTimer\bin\Debug\OperationTimer.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -48,12 +45,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Basement.cs" />
+    <Compile Include="Door.cs" />
+    <Compile Include="House.cs" />
+    <Compile Include="IPart.cs" />
+    <Compile Include="IWorker.cs" />
+    <Compile Include="Part.cs" />
+    <Compile Include="Plan.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Student.cs" />
+    <Compile Include="Roof.cs" />
+    <Compile Include="Team.cs" />
+    <Compile Include="TeamLeader.cs" />
+    <Compile Include="Walls.cs" />
+    <Compile Include="Window.cs" />
+    <Compile Include="Worker.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="task.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
