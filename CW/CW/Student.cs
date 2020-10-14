@@ -1,6 +1,7 @@
 ﻿using System;
 using System.CodeDom;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace CW
 {
@@ -30,6 +31,18 @@ namespace CW
         public override string ToString()
         {
             return $"Name: {Name}\tCard: {Card}";
+        }
+
+        public void EvTest()
+        {
+            Console.WriteLine(ToString());
+        }
+        public class CmpName : IComparer<Student>
+        {
+            public int Compare(Student x, Student y)
+            {
+                return String.Compare(x.Name, y.Name, StringComparison.OrdinalIgnoreCase);
+            }
         }
     }
 

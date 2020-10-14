@@ -1,22 +1,99 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Net.Sockets;
+using System.Reflection;
+using System.Runtime.InteropServices;
 using Gab.OperationTimer;
 
 namespace CW
 {
     class Program
     {
-        
+        public delegate void De();
+        public static event De Ev;
+
         static void Main(string[] args)
         {
 
+            Student[] arr =
+            {
+                new Student
+                {
+                    Name = "Zelda",
+                    Card = new StudentCard
+                    {
+                        Series = "AA",
+                        Number = "000000"
+                    }
+                },
+                new Student
+                {
+                    Name = "Ivan",
+                    Card = new StudentCard
+                    {
+                        Series = "BB",
+                        Number = "111111"
+                    }
+                },
+                new Student
+                {
+                    Name = "Igor",
+                    Card = new StudentCard
+                    {
+                        Series = "AA",
+                        Number = "222222"
+                    }
+                },
+            };
+
+            foreach (var student in arr)
+                Ev += student.EvTest;
+
+            Ev.Invoke();
+
+            Ev = Ev.Sort(new Student.CmpName());
+            Console.WriteLine();
+
+            Ev.Invoke();
 
             //-------------
             #region old
 
+            //=====================================================================
 
+            //Student[] arr =
+            //{
+            //    new Student
+            //    {
+            //        Name = "Olga",
+            //        Card = new StudentCard
+            //        {
+            //            Series = "AA",
+            //            Number = "000000"
+            //        }
+            //    },
+            //    new Student
+            //    {
+            //        Name = "Ivan",
+            //        Card = new StudentCard
+            //        {
+            //            Series = "BB",
+            //            Number = "111111"
+            //        }
+            //    },
+            //    new Student
+            //    {
+            //        Name = "Igor",
+            //        Card = new StudentCard
+            //        {
+            //            Series = "AA",
+            //            Number = "222222"
+            //        }
+            //    },
+            //};
 
             //=====================================================================
 

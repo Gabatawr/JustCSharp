@@ -14,7 +14,7 @@ namespace Meeting_7
     {
         static void Main(string[] args)
         {
-            int size = 50;
+            int size = 25;
             Car[] cars = new Car[size];
             for (int i = 0; i < size; i++)
             {
