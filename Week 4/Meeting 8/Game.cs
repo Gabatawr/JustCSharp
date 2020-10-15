@@ -86,13 +86,7 @@ namespace Meeting_8
 
                 // Отрисовка игрального стола
                 for (int i = 0; i < _players.Count; i++)
-                {
-                    bool isWinner = false;
-                    foreach (var winner in winners)
-                        if (winner == i) isWinner = true;
-                    
-                    table[i].Print(between, isWinner);
-                }
+                    table[i].Print(between, winners.Contains(i));
                 Console.SetCursorPosition(0, Console.CursorTop + 7);
                 Console.WriteLine("".PadRight(between * _players.Count - 3,'\''));
 
