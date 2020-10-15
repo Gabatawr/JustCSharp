@@ -1,12 +1,8 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Meeting_8
 {
-    class Card : IComparable<Card>
+    class Card
     {//------------------------------------------------------------------------
         public readonly struct CardValue
         {//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -50,12 +46,6 @@ namespace Meeting_8
 
             if (6 > value || value > 14) value = rand.Next(6, 15);
             Value = new CardValue(value);
-        }
-        //---------------------------------------------------------------------
-        public int CompareTo(Card card)
-        {
-            return this.Value.Weight < card.Value.Weight ? -1 : 
-                   this.Value.Weight > card.Value.Weight ?  1 : 0;
         }
         //---------------------------------------------------------------------
         public void Print(int between, bool isWinner)

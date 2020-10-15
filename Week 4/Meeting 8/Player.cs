@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace Meeting_8
 {
     class Player
@@ -16,7 +11,5 @@ namespace Meeting_8
             Name = name;
             CardDeck = new CardDeck();
         }
-        //---------------------------------------------------------------------
-
     }//------------------------------------------------------------------------
 }
