@@ -58,7 +58,7 @@ namespace Meeting_8
                    this.Value.Weight > card.Value.Weight ?  1 : 0;
         }
         //---------------------------------------------------------------------
-        public void Print(int between)
+        public void Print(int between, bool isWinner)
         {
             int left = Console.CursorLeft, top = Console.CursorTop, i = 0;
             void PrintLine(string text, int count = 1)
@@ -67,13 +67,15 @@ namespace Meeting_8
                 Console.Write(text);
             }
 
-            PrintLine( "┏━━━━━━━━━┓");
-            PrintLine($"┃ {Suit}{Value.Sign}".PadRight(10) + '┃');
-            PrintLine( '┃' + "".PadLeft(9) + '┃', 2);
-            PrintLine( "┃".PadRight(5) + Suit + "┃".PadLeft(5));
-            PrintLine( '┃' + "".PadLeft(9) + '┃', 2);
-            PrintLine( "┃".PadRight(7) + $"{Suit}{Value.Sign} ┃");
-            PrintLine( "┗━━━━━━━━━┛");
+            if (isWinner) Console.ForegroundColor = ConsoleColor.DarkCyan;
+                PrintLine( "┏━━━━━━━━━┓");
+                PrintLine($"┃ {Suit}{Value.Sign}".PadRight(10) + '┃');
+                PrintLine( '┃' + "".PadLeft(9) + '┃', 2);
+                PrintLine( "┃".PadRight(5) + Suit + "┃".PadLeft(5));
+                PrintLine( '┃' + "".PadLeft(9) + '┃', 2);
+                PrintLine( "┃".PadRight(7) + $"{Suit}{Value.Sign} ┃");
+                PrintLine( "┗━━━━━━━━━┛");
+            Console.ForegroundColor = ConsoleColor.White;
 
             Console.SetCursorPosition(left + 11 + between - 11, top);
         }

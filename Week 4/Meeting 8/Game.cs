@@ -41,7 +41,7 @@ namespace Meeting_8
             Console.BufferHeight = 32;
             Console.BufferWidth = 
                     _players.Count * between + 2 < Console.WindowWidth 
-                    ? Console.BufferWidth = Console.WindowWidth
+                    ? Console.WindowWidth
                     : _players.Count * between + 2;
 
             DealCards();
@@ -62,12 +62,7 @@ namespace Meeting_8
                 // Карты на стол
                 Card[] table = new Card[_players.Count];
                 for (int i = 0; i < _players.Count; i++)
-                {
                     table[i] = _players[i].CardDeck.Take();
-                    table[i].Print(between);
-                }
-                Console.SetCursorPosition(0, Console.CursorTop + 7);
-                Console.WriteLine("".PadRight(between * _players.Count - 3,'\''));
 
                 // Если на столе только 6 и T, тогда 6 забирают T
                 bool omg = true;
@@ -80,7 +75,7 @@ namespace Meeting_8
                     }
                 }
 
-                // Формируем список победителей (т.к. он может быть не один)
+                // Формируем список победителей
                 var winners =
                     omg ? table.ToLookup(i => (i.Value.Weight != 6 ? i.Value.Weight : 15 ), 
                                          i => Array.IndexOf(table, i)
@@ -88,6 +83,18 @@ namespace Meeting_8
                         : table.ToLookup(i => i.Value.Weight, 
                                          i => Array.IndexOf(table, i)
                                          ).OrderBy(i => i.Key).Last();
+
+                // Отрисовка игрального стола
+                for (int i = 0; i < _players.Count; i++)
+                {
+                    bool isWinner = false;
+                    foreach (var winner in winners)
+                        if (winner == i) isWinner = true;
+                    
+                    table[i].Print(between, isWinner);
+                }
+                Console.SetCursorPosition(0, Console.CursorTop + 7);
+                Console.WriteLine("".PadRight(between * _players.Count - 3,'\''));
 
                 // Победители забирают каждый свою карту
                 foreach (var winner in winners)
