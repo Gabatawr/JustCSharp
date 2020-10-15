@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Menu", "Menu\Menu.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OperationTimer", "OperationTimer\OperationTimer.csproj", "{A1478913-A1F7-4C7B-BE32-DE9157517FD7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtensionArray", "ExtensionArray\ExtensionArray.csproj", "{A155B97A-308B-4E56-822F-C827BECEFEE2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayExtension", "ArrayExtension\ArrayExtension.csproj", "{C3045CAD-A4FE-49FC-9001-DC6ABD34B263}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{A1478913-A1F7-4C7B-BE32-DE9157517FD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1478913-A1F7-4C7B-BE32-DE9157517FD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1478913-A1F7-4C7B-BE32-DE9157517FD7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A155B97A-308B-4E56-822F-C827BECEFEE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A155B97A-308B-4E56-822F-C827BECEFEE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A155B97A-308B-4E56-822F-C827BECEFEE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A155B97A-308B-4E56-822F-C827BECEFEE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3045CAD-A4FE-49FC-9001-DC6ABD34B263}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3045CAD-A4FE-49FC-9001-DC6ABD34B263}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3045CAD-A4FE-49FC-9001-DC6ABD34B263}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3045CAD-A4FE-49FC-9001-DC6ABD34B263}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

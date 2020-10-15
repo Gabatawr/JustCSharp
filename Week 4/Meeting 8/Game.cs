@@ -1,33 +1,137 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Gab.ArrayExtension;
 
 namespace Meeting_8
 {
     
     class Game
-    {
-        private Player[] _players;
-        private Queue<Card> _cardDeck;
+    {//------------------------------------------------------------------------
+        private List<Player> _players;
+        private readonly CardDeck _cardDeck;
+        //---------------------------------------------------------------------
         public Game(params Player[] players)
         {
-            _players = players.Length < 2 ? new[] {players[0], new Player()} : players;
+            if      (players.Length == 0) _players = new List<Player>() {new Player(RandomName.Boy(true)), new Player(RandomName.Boy(true))};
+            else if (players.Length == 1) _players = new List<Player>() { players.First(), new Player(RandomName.Boy(true))};
+            else                          _players = new List<Player>(players);
 
-            Card[] defCardDeck = new Card[36];
-            for (var i = 0; i < _cardDeck.Count; i++)
+            _cardDeck = new CardDeck();
+            _cardDeck.Full();
+        }
+        //---------------------------------------------------------------------
+        private void DealCards()
+        {
+            for (int i = 0; _cardDeck.Count != 0;)
             {
-                for (var suit = 0; suit < 4; suit++)
-                {
-                    for (var value = 0; value < 9; value++)
-                    {
+                _players[i].CardDeck.Add(_cardDeck.Take());
+                if (++i == _players.Count) i = 0;
+            }
+        }
+        //---------------------------------------------------------------------
+        public void Play()
+        {
+            int between = 16;
+            Console.BufferWidth = _players.Count * between + 2;
+            Console.BufferHeight = 32;
 
+            DealCards();
+            while (true)
+            {
+                // Рандомизация очередности хода
+                //_players = _players.ToArray().Mix().ToList();
+
+                // Имена игроков
+                foreach (var player in _players)
+                {
+                    Console.Write((' ' + player.Name 
+                                       + (player.CardDeck.Count < 10 ? "[0" : "[")
+                                       + player.CardDeck.Count + ']').PadRight(between));
+                }
+                Console.Write("\n ");
+
+                // Карты на стол
+                Card[] table = new Card[_players.Count];
+                for (int i = 0; i < _players.Count; i++)
+                {
+                    table[i] = _players[i].CardDeck.Take();
+                    table[i].Print(between);
+                }
+                Console.SetCursorPosition(0, Console.CursorTop + 7);
+                Console.WriteLine("".PadRight(between * _players.Count - 3,'\''));
+
+                // Если на столе только 6 и T, тогда 6 забирают T
+                bool omg = true;
+                foreach (var card in table)
+                {
+                    if (card.Value.Weight != 6 && card.Value.Weight != 14)
+                    {
+                        omg = false;
+                        break;
                     }
                 }
-            }
-            
 
+                // Формируем список победителей (т.к. он может быть не один)
+                var winners =
+                    omg ? table.ToLookup(i => (i.Value.Weight != 6 ? i.Value.Weight : 15 ), 
+                                         i => Array.IndexOf(table, i)
+                                         ).OrderBy(i => i.Key).Last()
+                        : table.ToLookup(i => i.Value.Weight, 
+                                         i => Array.IndexOf(table, i)
+                                         ).OrderBy(i => i.Key).Last();
+
+                // Победители забирают каждый свою карту
+                foreach (var winner in winners)
+                {
+                    _players[winner].CardDeck.Add(table[winner]);
+                    table[winner] = null;
+                }
+
+                // Победители забирают карты со стола (по одной) в порядке розыгрыша
+                RecursionAdd(0);
+                //'''''''''''''''''''''''''''''''''''''''''
+                void RecursionAdd(int ind)
+                {
+                    foreach (var winner in winners)
+                    {
+                        if (table[ind] != null)
+                        {
+                            _players[winner].CardDeck.Add(table[ind]);
+                            table[ind] = null;
+                        }
+                        if (++ind == table.Length) break;
+                    }
+                    if (ind < table.Length) RecursionAdd(ind);
+                }
+                //.........................................
+
+                // Проверка на наличие карт
+                for (int i = 0; i < _players.Count;)
+                {
+                    if (_players[i].CardDeck.Count == 0) _players.Remove(_players[i]);
+                    else i++;
+                }
+
+                // Последний игрок?
+                if (_players.Count == 1)
+                {
+                    Console.WriteLine(_players.First().Name + " WIN!");
+                    break;
+                }
+
+                // Очистка консоли если достигнут придел буфера
+                Console.BufferHeight += 10;
+                if (Console.CursorTop > Int16.MaxValue - 64)
+                {
+                    Console.Write(" Enter to continue..");
+                    while (Console.ReadKey().Key != ConsoleKey.Enter);
+                    Console.Clear();
+                }
+            }
         }
-    }
+    }//------------------------------------------------------------------------
 }

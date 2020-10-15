@@ -2,9 +2,9 @@
 
 namespace Gab
 {
-    namespace ExtensionArray
+    namespace ArrayExtension
     {
-        public static class ExtensionArray
+        public static class ArrayExtension
         {
             public static T[] Mix<T>(this T[] array)
             {
@@ -14,11 +14,10 @@ namespace Gab
                 {
                     r = rand.Next(array.Length);
 
-                    T temp   = array[r];
+                    T temp = array[r];
                     array[r] = array[i];
-                    array[r] = temp;
+                    array[i] = temp;
                 }
-
                 return array;
             }
         }

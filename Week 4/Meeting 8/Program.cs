@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +10,18 @@ namespace Meeting_8
     {
         static void Main(string[] args)
         {
+            Console.OutputEncoding = Encoding.Unicode;
+
+            int size = 18;
+            Player[] players = new Player[size];
+            for (var i = 0; i < players.Length; i++)
+                players[i] = new Player(RandomName.Boy(true));
+            
+
+            Game game = new Game(players);
+            game.Play();
+
+            Console.Read();
         }
     }
 }
