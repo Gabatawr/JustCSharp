@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Gab.ArrayExtension;
 
 namespace Meeting_8
@@ -35,9 +36,13 @@ namespace Meeting_8
         //---------------------------------------------------------------------
         public void Play()
         {
+            // Настройка отображения
             int between = 16;
-            Console.BufferWidth = _players.Count * between + 2;
             Console.BufferHeight = 32;
+            Console.BufferWidth = 
+                    _players.Count * between + 2 < Console.WindowWidth 
+                    ? Console.BufferWidth = Console.WindowWidth
+                    : _players.Count * between + 2;
 
             DealCards();
             while (true)

@@ -17,7 +17,6 @@ namespace Meeting_8
             for (var i = 0; i < players.Length; i++)
                 players[i] = new Player(RandomName.Boy(true));
             
-
             Game game = new Game(players);
             game.Play();
 
