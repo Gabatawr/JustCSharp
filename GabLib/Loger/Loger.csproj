@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{641D8816-72AA-4A47-9B4D-FD62CD64A8AE}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Meeting_6</RootNamespace>
-    <AssemblyName>Meeting 6</AssemblyName>
+    <ProjectGuid>{43DF9F1B-11AE-4044-ABEB-00EF1A25F6AC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Loger</RootNamespace>
+    <AssemblyName>Loger</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,22 +21,18 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <LangVersion>8</LangVersion>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <LangVersion>8</LangVersion>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Loger">
-      <HintPath>..\..\GabLib\Loger\bin\Release\Loger.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -48,27 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Basement.cs" />
-    <Compile Include="Door.cs" />
-    <Compile Include="House.cs" />
-    <Compile Include="IPart.cs" />
-    <Compile Include="IWorker.cs" />
-    <Compile Include="Part.cs" />
-    <Compile Include="Plan.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Loger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Roof.cs" />
-    <Compile Include="Team.cs" />
-    <Compile Include="TeamLeader.cs" />
-    <Compile Include="Walls.cs" />
-    <Compile Include="Window.cs" />
-    <Compile Include="Worker.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="task.txt" />
+    <Content Include="Task.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
