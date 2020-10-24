@@ -29,16 +29,15 @@ namespace Gab
                 Info,
                 Warning
             }
-
             //---------------------------------------------------------------------
-            private delegate void Print(StreamWriter sw, string msg, MessageType type);
-            private static event Print WriteLine;
+            public static string LogFile    { get; set; } = "log.txt";
+            public static string ConfigFile { get; set; } = "config.ini";
             //---------------------------------------------------------------------
             private static readonly List<string> Fields;
-            static readonly string[] Pattern;
+            private static readonly string[]     Pattern;
             //---------------------------------------------------------------------
-            public static string LogFile { get; set; } = "log.txt";
-            public static string ConfigFile { get; set; } = "config.ini";
+            private delegate void D(StreamWriter sw, string msg, MessageType type);
+            private static event  D WriteLine;
             //---------------------------------------------------------------------
             static Loger()
             {
