@@ -37,9 +37,9 @@ namespace Meeting_10
         public static void Run()
         {
             string file = "index.html";
-            //string url = "http://finance.i.ua/";
+            string url = "http://finance.i.ua/";
 
-            //Download(file, url);
+            Download(file, url);
             string buffer = GetBuffer(file);
             using StringReader reader = new StringReader(buffer);
 
@@ -113,8 +113,6 @@ namespace Meeting_10
 
             xmlW.WriteEndElement();
             xmlW.WriteEndDocument();
-
-            
         }
         //---------------------------------------------------------------------
     }
