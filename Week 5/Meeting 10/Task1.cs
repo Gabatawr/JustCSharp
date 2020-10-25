@@ -6,6 +6,7 @@ using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Xml;
 
 #region Description
 /*
@@ -36,9 +37,9 @@ namespace Meeting_10
         public static void Run()
         {
             string file = "index.html";
-            string url = "http://finance.i.ua/";
+            //string url = "http://finance.i.ua/";
 
-            Download(file, url);
+            //Download(file, url);
             string buffer = GetBuffer(file);
             using StringReader reader = new StringReader(buffer);
 
@@ -92,12 +93,28 @@ namespace Meeting_10
                             + "buy:".PadRight(6)
                             + "sell:" + "\n ".PadRight(bankNameMax + 14, '\''));
 
+
+            using XmlTextWriter xmlW = new XmlTextWriter("output.xml", Encoding.Unicode);
+            xmlW.WriteStartDocument();
+            xmlW.WriteStartElement("Banks");
+
             foreach (var bank in bankArray)
             {
+                xmlW.WriteStartElement("Bank");
+                xmlW.WriteAttributeString("Name", bank.Name);
+                    xmlW.WriteElementString("buy", bank.buy.ToString());
+                    xmlW.WriteElementString("sell", bank.sell.ToString());
+                xmlW.WriteEndElement();
+
                 Console.WriteLine($" {bank.Name}".PadRight(bankNameMax + 2) 
                                 + $"{bank.buy}".PadRight(6) 
                                 + $"{bank.sell}");
             }
+
+            xmlW.WriteEndElement();
+            xmlW.WriteEndDocument();
+
+            
         }
         //---------------------------------------------------------------------
     }
