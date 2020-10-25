@@ -1,5 +1,4 @@
 ﻿using System;
-using Gab.Loger;
 
 #region Description
 /*
@@ -15,8 +14,6 @@ namespace Meeting_6
     {
         static void Main(string[] args)
         {
-            Loger.Write("text", Loger.MessageType.Text);
-
             Team team = new Team
             (   new Worker(), new Worker(), 
                 new Worker(), new Worker(), 

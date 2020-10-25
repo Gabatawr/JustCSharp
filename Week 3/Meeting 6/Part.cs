@@ -1,4 +1,5 @@
 ﻿using System;
+using Gab.Loger;
 
 namespace Meeting_6
 {
@@ -18,8 +19,12 @@ namespace Meeting_6
         //---------------------------------------------------------------------
         public void Completed(IWorker teamLeader)
         {
-            if (teamLeader.GetType() == Type.GetType("TeamLeader"))
+            if (teamLeader is TeamLeader)
+            {
                 IsCompleted = true;
+                Loger.Write("Team Leader Verification : OK", Loger.MessageType.Info);
+            }
+                
         }
         public static Part operator ++(Part part)
         {
@@ -36,6 +41,7 @@ namespace Meeting_6
             {
                 worker.Work(this);
             }
+            Loger.Write($"Build {this.GetType().Name}: {oldProgress} >> {Progress}", Loger.MessageType.Info);
             Draw(oldProgress, Progress);
         }
         //---------------------------------------------------------------------

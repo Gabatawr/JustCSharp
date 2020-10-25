@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using Gab.Loger;
 
 namespace Meeting_6
 {
@@ -16,6 +16,7 @@ namespace Meeting_6
         {
             _listParts = listParts.ToLookup(part => part.GetPriority());
             Length = listParts.Length;
+            Loger.Write("+New Plan", Loger.MessageType.Info);
         }
     }//------------------------------------------------------------------------
 }

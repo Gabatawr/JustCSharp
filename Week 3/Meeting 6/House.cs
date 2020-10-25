@@ -1,4 +1,5 @@
 ﻿using System;
+using Gab.Loger;
 
 namespace Meeting_6
 {
@@ -18,19 +19,24 @@ namespace Meeting_6
             {
                 foreach (var part in plan[i])
                 {
-                    if (!part.IsCompleted)
+                    while (!part.IsCompleted)
                     {
                         part.Build(team[w]);
 
-                        if (part.Progress == 100) 
+                        if (part.Progress == 100)
+                        {
                             team["leader"].Work(part);
+                            Loger.Write($"{part.GetType().Name} is completed", Loger.MessageType.Info);
+                        }
+
+                        if (++w == team.Length) w = 0;
                     }
                 }
 
-                if (++w == team.Length) w = 0;
                 if (++i == plan.Length) completed = true;
             }
 
+            Loger.Write($"House building completed", Loger.MessageType.Info);
             Console.WriteLine(@"
      /'/'/''/'//'''/'///'/''/'''''/'/'/''/'/\  
     / /   ///    /  /  /  //   / /      ///  \ 

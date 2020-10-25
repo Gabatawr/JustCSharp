@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D1F8E4E5-83E9-4590-9FA8-AD1DF04B5B0A}"
 	ProjectSection(SolutionItems) = preProject
 		Meeting 6\bin\Debug\config.ini = Meeting 6\bin\Debug\config.ini
+		Meeting 6\log.txt = Meeting 6\log.txt
 	EndProjectSection
 EndProject
 Global

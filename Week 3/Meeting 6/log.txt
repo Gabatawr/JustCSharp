@@ -1,0 +1,123 @@
+10/25/2020 10:18:44 : Info : +New Worker
+10/25/2020 10:18:44 : Info : +New Worker
+10/25/2020 10:18:44 : Info : +New Worker
+10/25/2020 10:18:44 : Info : +New Worker
+10/25/2020 10:18:44 : Info : +New Team Leader
+10/25/2020 10:18:44 : Info : +New Plan
+10/25/2020 10:18:44 : Info : Build Basement: 0 >> 15
+10/25/2020 10:18:44 : Info : Build Basement: 15 >> 29
+10/25/2020 10:18:44 : Info : Build Basement: 29 >> 40
+10/25/2020 10:18:44 : Info : Build Basement: 40 >> 59
+10/25/2020 10:18:44 : Info : Build Basement: 59 >> 82
+10/25/2020 10:18:44 : Info : Build Basement: 82 >> 93
+10/25/2020 10:18:44 : Info : Build Basement: 93 >> 97
+10/25/2020 10:18:44 : Info : Build Basement: 97 >> 100
+10/25/2020 10:18:44 : Info : Team Leader Verification : OK
+10/25/2020 10:18:44 : Info : Basement is completed
+10/25/2020 10:18:44 : Info : Build Walls: 0 >> 6
+10/25/2020 10:18:44 : Info : Build Walls: 6 >> 26
+10/25/2020 10:18:44 : Info : Build Walls: 26 >> 29
+10/25/2020 10:18:44 : Info : Build Walls: 29 >> 43
+10/25/2020 10:18:44 : Info : Build Walls: 43 >> 63
+10/25/2020 10:18:44 : Info : Build Walls: 63 >> 71
+10/25/2020 10:18:44 : Info : Build Walls: 71 >> 92
+10/25/2020 10:18:44 : Info : Build Walls: 92 >> 100
+10/25/2020 10:18:44 : Info : Team Leader Verification : OK
+10/25/2020 10:18:44 : Info : Walls is completed
+10/25/2020 10:18:44 : Info : Build Walls: 0 >> 5
+10/25/2020 10:18:44 : Info : Build Walls: 5 >> 5
+10/25/2020 10:18:44 : Info : Build Walls: 5 >> 21
+10/25/2020 10:18:44 : Info : Build Walls: 21 >> 43
+10/25/2020 10:18:44 : Info : Build Walls: 43 >> 51
+10/25/2020 10:18:44 : Info : Build Walls: 51 >> 69
+10/25/2020 10:18:44 : Info : Build Walls: 69 >> 87
+10/25/2020 10:18:44 : Info : Build Walls: 87 >> 100
+10/25/2020 10:18:44 : Info : Team Leader Verification : OK
+10/25/2020 10:18:44 : Info : Walls is completed
+10/25/2020 10:18:44 : Info : Build Walls: 0 >> 7
+10/25/2020 10:18:44 : Info : Build Walls: 7 >> 31
+10/25/2020 10:18:44 : Info : Build Walls: 31 >> 39
+10/25/2020 10:18:44 : Info : Build Walls: 39 >> 58
+10/25/2020 10:18:44 : Info : Build Walls: 58 >> 58
+10/25/2020 10:18:44 : Info : Build Walls: 58 >> 65
+10/25/2020 10:18:44 : Info : Build Walls: 65 >> 70
+10/25/2020 10:18:44 : Info : Build Walls: 70 >> 85
+10/25/2020 10:18:44 : Info : Build Walls: 85 >> 100
+10/25/2020 10:18:44 : Info : Team Leader Verification : OK
+10/25/2020 10:18:44 : Info : Walls is completed
+10/25/2020 10:18:44 : Info : Build Walls: 0 >> 3
+10/25/2020 10:18:44 : Info : Build Walls: 3 >> 20
+10/25/2020 10:18:44 : Info : Build Walls: 20 >> 21
+10/25/2020 10:18:44 : Info : Build Walls: 21 >> 29
+10/25/2020 10:18:44 : Info : Build Walls: 29 >> 53
+10/25/2020 10:18:44 : Info : Build Walls: 53 >> 63
+10/25/2020 10:18:44 : Info : Build Walls: 63 >> 84
+10/25/2020 10:18:44 : Info : Build Walls: 84 >> 97
+10/25/2020 10:18:44 : Info : Build Walls: 97 >> 99
+10/25/2020 10:18:44 : Info : Build Walls: 99 >> 100
+10/25/2020 10:18:44 : Info : Team Leader Verification : OK
+10/25/2020 10:18:44 : Info : Walls is completed
+10/25/2020 10:18:44 : Info : Build Door: 0 >> 6
+10/25/2020 10:18:44 : Info : Build Door: 6 >> 17
+10/25/2020 10:18:44 : Info : Build Door: 17 >> 18
+10/25/2020 10:18:44 : Info : Build Door: 18 >> 19
+10/25/2020 10:18:44 : Info : Build Door: 19 >> 33
+10/25/2020 10:18:44 : Info : Build Door: 33 >> 54
+10/25/2020 10:18:44 : Info : Build Door: 54 >> 70
+10/25/2020 10:18:44 : Info : Build Door: 70 >> 77
+10/25/2020 10:18:44 : Info : Build Door: 77 >> 91
+10/25/2020 10:18:44 : Info : Build Door: 91 >> 97
+10/25/2020 10:18:44 : Info : Build Door: 97 >> 100
+10/25/2020 10:18:44 : Info : Team Leader Verification : OK
+10/25/2020 10:18:44 : Info : Door is completed
+10/25/2020 10:18:44 : Info : Build Window: 0 >> 14
+10/25/2020 10:18:44 : Info : Build Window: 14 >> 36
+10/25/2020 10:18:44 : Info : Build Window: 36 >> 56
+10/25/2020 10:18:44 : Info : Build Window: 56 >> 76
+10/25/2020 10:18:44 : Info : Build Window: 76 >> 88
+10/25/2020 10:18:44 : Info : Build Window: 88 >> 100
+10/25/2020 10:18:44 : Info : Team Leader Verification : OK
+10/25/2020 10:18:45 : Info : Window is completed
+10/25/2020 10:18:45 : Info : Build Window: 0 >> 2
+10/25/2020 10:18:45 : Info : Build Window: 2 >> 12
+10/25/2020 10:18:45 : Info : Build Window: 12 >> 31
+10/25/2020 10:18:45 : Info : Build Window: 31 >> 55
+10/25/2020 10:18:45 : Info : Build Window: 55 >> 69
+10/25/2020 10:18:45 : Info : Build Window: 69 >> 81
+10/25/2020 10:18:45 : Info : Build Window: 81 >> 96
+10/25/2020 10:18:45 : Info : Build Window: 96 >> 100
+10/25/2020 10:18:45 : Info : Team Leader Verification : OK
+10/25/2020 10:18:45 : Info : Window is completed
+10/25/2020 10:18:45 : Info : Build Window: 0 >> 15
+10/25/2020 10:18:45 : Info : Build Window: 15 >> 35
+10/25/2020 10:18:45 : Info : Build Window: 35 >> 48
+10/25/2020 10:18:45 : Info : Build Window: 48 >> 54
+10/25/2020 10:18:45 : Info : Build Window: 54 >> 68
+10/25/2020 10:18:45 : Info : Build Window: 68 >> 88
+10/25/2020 10:18:45 : Info : Build Window: 88 >> 96
+10/25/2020 10:18:45 : Info : Build Window: 96 >> 100
+10/25/2020 10:18:45 : Info : Team Leader Verification : OK
+10/25/2020 10:18:45 : Info : Window is completed
+10/25/2020 10:18:45 : Info : Build Window: 0 >> 0
+10/25/2020 10:18:45 : Info : Build Window: 0 >> 11
+10/25/2020 10:18:45 : Info : Build Window: 11 >> 15
+10/25/2020 10:18:45 : Info : Build Window: 15 >> 20
+10/25/2020 10:18:45 : Info : Build Window: 20 >> 43
+10/25/2020 10:18:45 : Info : Build Window: 43 >> 61
+10/25/2020 10:18:45 : Info : Build Window: 61 >> 83
+10/25/2020 10:18:45 : Info : Build Window: 83 >> 92
+10/25/2020 10:18:45 : Info : Build Window: 92 >> 100
+10/25/2020 10:18:45 : Info : Team Leader Verification : OK
+10/25/2020 10:18:45 : Info : Window is completed
+10/25/2020 10:18:45 : Info : Build Roof: 0 >> 16
+10/25/2020 10:18:45 : Info : Build Roof: 16 >> 25
+10/25/2020 10:18:45 : Info : Build Roof: 25 >> 33
+10/25/2020 10:18:45 : Info : Build Roof: 33 >> 46
+10/25/2020 10:18:45 : Info : Build Roof: 46 >> 66
+10/25/2020 10:18:45 : Info : Build Roof: 66 >> 71
+10/25/2020 10:18:45 : Info : Build Roof: 71 >> 84
+10/25/2020 10:18:45 : Info : Build Roof: 84 >> 96
+10/25/2020 10:18:45 : Info : Build Roof: 96 >> 100
+10/25/2020 10:18:45 : Info : Team Leader Verification : OK
+10/25/2020 10:18:45 : Info : Roof is completed
+10/25/2020 10:18:45 : Info : House building completed
