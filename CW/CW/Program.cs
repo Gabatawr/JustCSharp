@@ -23,7 +23,6 @@ namespace CW
         static void Main(string[] args)
         {
 
-
             //-------------
             Console.Read();
         }

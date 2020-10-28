@@ -1,0 +1,3 @@
+﻿https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange
+
+Получить список валют, курс которых меньше 10грн за 1 валюты
