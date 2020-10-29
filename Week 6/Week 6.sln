@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meeting 12", "Meeting 12\Meeting 12.csproj", "{EE88DA2F-B560-4F42-9A17-DBB076A9BE8A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE88DA2F-B560-4F42-9A17-DBB076A9BE8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE88DA2F-B560-4F42-9A17-DBB076A9BE8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE88DA2F-B560-4F42-9A17-DBB076A9BE8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE88DA2F-B560-4F42-9A17-DBB076A9BE8A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {357A1C0F-90B1-4903-8F1A-1294D98B8B48}
+	EndGlobalSection
+EndGlobal
