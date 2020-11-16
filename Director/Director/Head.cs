@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace Director
 {
-    public partial class Form : System.Windows.Forms.Form
+    public partial class Head : UserControl
     {
-        public Form()
+        public Head()
         {
             InitializeComponent();
+        }
+
+        public void SubMouseClick(MouseEventHandler method)
+        {
+            table.MouseClick += method;
+            folderName.MouseClick += method;
         }
     }
 }

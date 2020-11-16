@@ -2,7 +2,7 @@
 
 namespace Director
 {
-    partial class Form
+    partial class MainForm
     {
         #region sys
 
@@ -27,9 +27,15 @@ namespace Director
             this._menuUpEditCut = new System.Windows.Forms.ToolStripMenuItem();
             this._menuUpEditCopy = new System.Windows.Forms.ToolStripMenuItem();
             this._menuUpEditPaste = new System.Windows.Forms.ToolStripMenuItem();
+            this._navPanel = new System.Windows.Forms.Panel();
+            this._headersPanel = new System.Windows.Forms.Panel();
+            this._tabPanel = new System.Windows.Forms.Panel();
+            this._headers = new Director.Headers();
             this._nav = new Director.Nav();
-            this.headers = new Director.Headers();
+            this._folderDialog = new System.Windows.Forms.FolderBrowserDialog();
             this._menuUp.SuspendLayout();
+            this._navPanel.SuspendLayout();
+            this._headersPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // _menuUp
@@ -105,28 +111,67 @@ namespace Director
             this._menuUpEditPaste.Size = new System.Drawing.Size(150, 22);
             this._menuUpEditPaste.Text = "Paste";
             // 
+            // _navPanel
+            // 
+            this._navPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this._navPanel.Controls.Add(this._nav);
+            this._navPanel.Location = new System.Drawing.Point(8, 12);
+            this._navPanel.Margin = new System.Windows.Forms.Padding(0);
+            this._navPanel.Name = "_navPanel";
+            this._navPanel.Size = new System.Drawing.Size(1264, 24);
+            this._navPanel.TabIndex = 4;
+            // 
+            // _headersPanel
+            // 
+            this._headersPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this._headersPanel.BackColor = System.Drawing.Color.White;
+            this._headersPanel.Controls.Add(this._headers);
+            this._headersPanel.Location = new System.Drawing.Point(8, 40);
+            this._headersPanel.Margin = new System.Windows.Forms.Padding(0);
+            this._headersPanel.Name = "_headersPanel";
+            this._headersPanel.Size = new System.Drawing.Size(1264, 36);
+            this._headersPanel.TabIndex = 5;
+            // 
+            // _tabPanel
+            // 
+            this._tabPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this._tabPanel.BackColor = System.Drawing.Color.White;
+            this._tabPanel.Location = new System.Drawing.Point(8, 80);
+            this._tabPanel.Margin = new System.Windows.Forms.Padding(0);
+            this._tabPanel.Name = "_tabPanel";
+            this._tabPanel.Size = new System.Drawing.Size(1264, 631);
+            this._tabPanel.TabIndex = 3;
+            // 
+            // _headers
+            // 
+            this._headers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._headers.Location = new System.Drawing.Point(0, 0);
+            this._headers.Margin = new System.Windows.Forms.Padding(0);
+            this._headers.Name = "_headers";
+            this._headers.Size = new System.Drawing.Size(1264, 36);
+            this._headers.TabIndex = 0;
+            // 
             // _nav
             // 
-            this._nav.Location = new System.Drawing.Point(9, 9);
+            this._nav.BackColor = System.Drawing.Color.White;
+            this._nav.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._nav.Location = new System.Drawing.Point(0, 0);
             this._nav.Margin = new System.Windows.Forms.Padding(0);
             this._nav.Name = "_nav";
-            this._nav.Size = new System.Drawing.Size(1262, 24);
-            this._nav.TabIndex = 1;
-            // 
-            // headers
-            // 
-            this.headers.Location = new System.Drawing.Point(9, 33);
-            this.headers.Margin = new System.Windows.Forms.Padding(0);
-            this.headers.Name = "headers";
-            this.headers.Size = new System.Drawing.Size(1262, 46);
-            this.headers.TabIndex = 2;
+            this._nav.Size = new System.Drawing.Size(1264, 24);
+            this._nav.TabIndex = 0;
             // 
             // Form
             // 
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1280, 720);
-            this.Controls.Add(this.headers);
-            this.Controls.Add(this._nav);
+            this.Controls.Add(this._headersPanel);
+            this.Controls.Add(this._navPanel);
+            this.Controls.Add(this._tabPanel);
             this.Controls.Add(this._menuUp);
             this.MainMenuStrip = this._menuUp;
             this.MinimumSize = new System.Drawing.Size(320, 240);
@@ -134,6 +179,8 @@ namespace Director
             this.Text = "Director";
             this._menuUp.ResumeLayout(false);
             this._menuUp.PerformLayout();
+            this._navPanel.ResumeLayout(false);
+            this._headersPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,8 +197,12 @@ namespace Director
         private System.Windows.Forms.ToolStripMenuItem _menuUpEditCut;
         private System.Windows.Forms.ToolStripMenuItem _menuUpEditCopy;
         private System.Windows.Forms.ToolStripMenuItem _menuUpEditPaste;
+        private System.Windows.Forms.Panel _navPanel;
+        private System.Windows.Forms.Panel _headersPanel;
         private Nav _nav;
-        private Headers headers;
+        private Headers _headers;
+        private System.Windows.Forms.Panel _tabPanel;
+        private System.Windows.Forms.FolderBrowserDialog _folderDialog;
     }
 }
 
