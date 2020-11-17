@@ -19,17 +19,18 @@ namespace Director
         private void InitializeComponent()
         {
             this.table = new System.Windows.Forms.TableLayoutPanel();
-            this.box = new System.Windows.Forms.FlowLayoutPanel();
             this.btnNew = new System.Windows.Forms.Button();
+            this.box = new System.Windows.Forms.FlowLayoutPanel();
             this.table.SuspendLayout();
             this.SuspendLayout();
             // 
             // table
             // 
+            this.table.AutoSize = true;
             this.table.BackColor = System.Drawing.Color.White;
             this.table.ColumnCount = 2;
             this.table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.table.Controls.Add(this.btnNew, 1, 0);
             this.table.Controls.Add(this.box, 0, 0);
             this.table.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -38,18 +39,8 @@ namespace Director
             this.table.Name = "table";
             this.table.RowCount = 1;
             this.table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.table.Size = new System.Drawing.Size(1588, 952);
+            this.table.Size = new System.Drawing.Size(1264, 36);
             this.table.TabIndex = 0;
-            // 
-            // box
-            // 
-            this.box.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.box.AutoSize = true;
-            this.box.Location = new System.Drawing.Point(0, 476);
-            this.box.Margin = new System.Windows.Forms.Padding(0);
-            this.box.Name = "box";
-            this.box.Size = new System.Drawing.Size(0, 0);
-            this.box.TabIndex = 1;
             // 
             // btnNew
             // 
@@ -59,24 +50,36 @@ namespace Director
             this.btnNew.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
             this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNew.Image = global::Director.Properties.Resources._new;
-            this.btnNew.Location = new System.Drawing.Point(0, 459);
+            this.btnNew.Location = new System.Drawing.Point(0, 1);
             this.btnNew.Margin = new System.Windows.Forms.Padding(0);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(34, 34);
             this.btnNew.TabIndex = 0;
             this.btnNew.UseVisualStyleBackColor = true;
             // 
+            // box
+            // 
+            this.box.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.box.AutoSize = true;
+            this.box.Location = new System.Drawing.Point(0, 18);
+            this.box.Margin = new System.Windows.Forms.Padding(0);
+            this.box.Name = "box";
+            this.box.Size = new System.Drawing.Size(0, 0);
+            this.box.TabIndex = 1;
+            // 
             // Headers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.Controls.Add(this.table);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "Headers";
-            this.Size = new System.Drawing.Size(1588, 952);
+            this.Size = new System.Drawing.Size(1264, 36);
             this.table.ResumeLayout(false);
             this.table.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

@@ -18,6 +18,7 @@ namespace Director
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this._menuUp = new System.Windows.Forms.MenuStrip();
             this._menuUpFile = new System.Windows.Forms.ToolStripMenuItem();
             this._menuUpFileNew = new System.Windows.Forms.ToolStripMenuItem();
@@ -28,14 +29,26 @@ namespace Director
             this._menuUpEditCopy = new System.Windows.Forms.ToolStripMenuItem();
             this._menuUpEditPaste = new System.Windows.Forms.ToolStripMenuItem();
             this._navPanel = new System.Windows.Forms.Panel();
-            this._headersPanel = new System.Windows.Forms.Panel();
-            this._tabPanel = new System.Windows.Forms.Panel();
-            this._headers = new Director.Headers();
             this._nav = new Director.Nav();
+            this._headersPanel = new System.Windows.Forms.Panel();
+            this._headers = new Director.Headers();
+            this._tabPanel = new System.Windows.Forms.Panel();
             this._folderDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this._infoPanel = new System.Windows.Forms.StatusStrip();
+            this._infoDirectoryLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this._infoDirectoryCount = new System.Windows.Forms.ToolStripStatusLabel();
+            this._infoViewMode = new System.Windows.Forms.ToolStripSplitButton();
+            this._infoViewDetails = new System.Windows.Forms.ToolStripMenuItem();
+            this._infoViewTitle = new System.Windows.Forms.ToolStripMenuItem();
+            this._infoViewList = new System.Windows.Forms.ToolStripMenuItem();
+            this._infoViewSmallIcons = new System.Windows.Forms.ToolStripMenuItem();
+            this._infoViewLangeIcons = new System.Windows.Forms.ToolStripMenuItem();
+            this._infoFileLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this._infoFileCount = new System.Windows.Forms.ToolStripStatusLabel();
             this._menuUp.SuspendLayout();
             this._navPanel.SuspendLayout();
             this._headersPanel.SuspendLayout();
+            this._infoPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // _menuUp
@@ -122,39 +135,6 @@ namespace Director
             this._navPanel.Size = new System.Drawing.Size(1264, 24);
             this._navPanel.TabIndex = 4;
             // 
-            // _headersPanel
-            // 
-            this._headersPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this._headersPanel.BackColor = System.Drawing.Color.White;
-            this._headersPanel.Controls.Add(this._headers);
-            this._headersPanel.Location = new System.Drawing.Point(8, 40);
-            this._headersPanel.Margin = new System.Windows.Forms.Padding(0);
-            this._headersPanel.Name = "_headersPanel";
-            this._headersPanel.Size = new System.Drawing.Size(1264, 36);
-            this._headersPanel.TabIndex = 5;
-            // 
-            // _tabPanel
-            // 
-            this._tabPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this._tabPanel.BackColor = System.Drawing.Color.White;
-            this._tabPanel.Location = new System.Drawing.Point(8, 80);
-            this._tabPanel.Margin = new System.Windows.Forms.Padding(0);
-            this._tabPanel.Name = "_tabPanel";
-            this._tabPanel.Size = new System.Drawing.Size(1264, 631);
-            this._tabPanel.TabIndex = 3;
-            // 
-            // _headers
-            // 
-            this._headers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._headers.Location = new System.Drawing.Point(0, 0);
-            this._headers.Margin = new System.Windows.Forms.Padding(0);
-            this._headers.Name = "_headers";
-            this._headers.Size = new System.Drawing.Size(1264, 36);
-            this._headers.TabIndex = 0;
-            // 
             // _nav
             // 
             this._nav.BackColor = System.Drawing.Color.White;
@@ -165,22 +145,149 @@ namespace Director
             this._nav.Size = new System.Drawing.Size(1264, 24);
             this._nav.TabIndex = 0;
             // 
-            // Form
+            // _headersPanel
+            // 
+            this._headersPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this._headersPanel.AutoSize = true;
+            this._headersPanel.BackColor = System.Drawing.Color.White;
+            this._headersPanel.Controls.Add(this._headers);
+            this._headersPanel.Location = new System.Drawing.Point(8, 40);
+            this._headersPanel.Margin = new System.Windows.Forms.Padding(0);
+            this._headersPanel.Name = "_headersPanel";
+            this._headersPanel.Size = new System.Drawing.Size(1264, 36);
+            this._headersPanel.TabIndex = 5;
+            // 
+            // _headers
+            // 
+            this._headers.AutoSize = true;
+            this._headers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._headers.Location = new System.Drawing.Point(0, 0);
+            this._headers.Margin = new System.Windows.Forms.Padding(0);
+            this._headers.Name = "_headers";
+            this._headers.Size = new System.Drawing.Size(1264, 36);
+            this._headers.TabIndex = 0;
+            // 
+            // _tabPanel
+            // 
+            this._tabPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this._tabPanel.BackColor = System.Drawing.Color.White;
+            this._tabPanel.Location = new System.Drawing.Point(8, 80);
+            this._tabPanel.Margin = new System.Windows.Forms.Padding(0);
+            this._tabPanel.Name = "_tabPanel";
+            this._tabPanel.Size = new System.Drawing.Size(1264, 618);
+            this._tabPanel.TabIndex = 3;
+            // 
+            // _infoPanel
+            // 
+            this._infoPanel.BackColor = System.Drawing.Color.Transparent;
+            this._infoPanel.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this._infoDirectoryLabel,
+            this._infoDirectoryCount,
+            this._infoFileLabel,
+            this._infoFileCount,
+            this._infoViewMode});
+            this._infoPanel.Location = new System.Drawing.Point(0, 698);
+            this._infoPanel.Name = "_infoPanel";
+            this._infoPanel.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this._infoPanel.Size = new System.Drawing.Size(1280, 22);
+            this._infoPanel.TabIndex = 6;
+            // 
+            // _infoDirectoryLabel
+            // 
+            this._infoDirectoryLabel.Margin = new System.Windows.Forms.Padding(3, 3, 0, 2);
+            this._infoDirectoryLabel.Name = "_infoDirectoryLabel";
+            this._infoDirectoryLabel.Size = new System.Drawing.Size(66, 17);
+            this._infoDirectoryLabel.Text = "Directories:";
+            // 
+            // _infoDirectoryCount
+            // 
+            this._infoDirectoryCount.Name = "_infoDirectoryCount";
+            this._infoDirectoryCount.Size = new System.Drawing.Size(13, 17);
+            this._infoDirectoryCount.Text = "0";
+            // 
+            // _infoViewMode
+            // 
+            this._infoViewMode.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this._infoViewMode.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this._infoViewMode.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this._infoViewDetails,
+            this._infoViewTitle,
+            this._infoViewList,
+            this._infoViewSmallIcons,
+            this._infoViewLangeIcons});
+            this._infoViewMode.Image = ((System.Drawing.Image)(resources.GetObject("_infoViewMode.Image")));
+            this._infoViewMode.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this._infoViewMode.Name = "_infoViewMode";
+            this._infoViewMode.Size = new System.Drawing.Size(32, 20);
+            this._infoViewMode.ToolTipText = "ViewMode";
+            // 
+            // _infoViewDetails
+            // 
+            this._infoViewDetails.Checked = true;
+            this._infoViewDetails.CheckState = System.Windows.Forms.CheckState.Checked;
+            this._infoViewDetails.Name = "_infoViewDetails";
+            this._infoViewDetails.Size = new System.Drawing.Size(180, 22);
+            this._infoViewDetails.Text = "Details";
+            // 
+            // _infoViewTitle
+            // 
+            this._infoViewTitle.Name = "_infoViewTitle";
+            this._infoViewTitle.Size = new System.Drawing.Size(180, 22);
+            this._infoViewTitle.Text = "Title";
+            // 
+            // _infoViewList
+            // 
+            this._infoViewList.Name = "_infoViewList";
+            this._infoViewList.Size = new System.Drawing.Size(180, 22);
+            this._infoViewList.Text = "List";
+            // 
+            // _infoViewSmallIcons
+            // 
+            this._infoViewSmallIcons.Name = "_infoViewSmallIcons";
+            this._infoViewSmallIcons.Size = new System.Drawing.Size(180, 22);
+            this._infoViewSmallIcons.Text = "SmallIcons";
+            // 
+            // _infoViewLangeIcons
+            // 
+            this._infoViewLangeIcons.Name = "_infoViewLangeIcons";
+            this._infoViewLangeIcons.Size = new System.Drawing.Size(180, 22);
+            this._infoViewLangeIcons.Text = "LargeIcons";
+            // 
+            // _infoFileLabel
+            // 
+            this._infoFileLabel.Name = "_infoFileLabel";
+            this._infoFileLabel.Size = new System.Drawing.Size(33, 17);
+            this._infoFileLabel.Text = "Files:";
+            // 
+            // _infoFileCount
+            // 
+            this._infoFileCount.Name = "_infoFileCount";
+            this._infoFileCount.Size = new System.Drawing.Size(13, 17);
+            this._infoFileCount.Text = "0";
+            // 
+            // MainForm
             // 
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.Controls.Add(this._infoPanel);
             this.Controls.Add(this._headersPanel);
             this.Controls.Add(this._navPanel);
             this.Controls.Add(this._tabPanel);
             this.Controls.Add(this._menuUp);
             this.MainMenuStrip = this._menuUp;
             this.MinimumSize = new System.Drawing.Size(320, 240);
-            this.Name = "Form";
+            this.Name = "MainForm";
             this.Text = "Director";
             this._menuUp.ResumeLayout(false);
             this._menuUp.PerformLayout();
             this._navPanel.ResumeLayout(false);
             this._headersPanel.ResumeLayout(false);
+            this._headersPanel.PerformLayout();
+            this._infoPanel.ResumeLayout(false);
+            this._infoPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,6 +310,17 @@ namespace Director
         private Headers _headers;
         private System.Windows.Forms.Panel _tabPanel;
         private System.Windows.Forms.FolderBrowserDialog _folderDialog;
+        private System.Windows.Forms.StatusStrip _infoPanel;
+        private System.Windows.Forms.ToolStripStatusLabel _infoDirectoryLabel;
+        private System.Windows.Forms.ToolStripStatusLabel _infoDirectoryCount;
+        private System.Windows.Forms.ToolStripSplitButton _infoViewMode;
+        private System.Windows.Forms.ToolStripMenuItem _infoViewSmallIcons;
+        private System.Windows.Forms.ToolStripMenuItem _infoViewLangeIcons;
+        private System.Windows.Forms.ToolStripMenuItem _infoViewList;
+        private System.Windows.Forms.ToolStripMenuItem _infoViewDetails;
+        private System.Windows.Forms.ToolStripMenuItem _infoViewTitle;
+        private System.Windows.Forms.ToolStripStatusLabel _infoFileLabel;
+        private System.Windows.Forms.ToolStripStatusLabel _infoFileCount;
     }
 }
 

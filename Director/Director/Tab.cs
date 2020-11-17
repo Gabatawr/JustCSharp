@@ -13,17 +13,16 @@ namespace Director
 {
     public partial class Tab : UserControl
     {
+        private event EventHandler ListChanged;
         public string FolderName => History[hIndex].Name;
         public string Path => History[hIndex].FullName;
 
         public List<DirectoryInfo> History = new List<DirectoryInfo>();
         public int hIndex;
 
-        public Tab(string path, EventHandler handler)
+        public Tab(string path, EventHandler ListChanged_Handler)
         {
             InitializeComponent();
-
-            content.DoubleClick += handler;
 
             History.Add(new DirectoryInfo(path));
 
@@ -45,10 +44,16 @@ namespace Director
                     Width = 64
                 }
             });
-
             content.View = MainForm.ViewMode;
 
+            ListChanged += ListChanged_Handler;
             ReList();
+        }
+
+        public void SubTab(EventHandler DoubleClick_Handler, KeyEventHandler KeyDown_Handler)
+        {
+            content.DoubleClick += DoubleClick_Handler;
+            content.KeyDown += KeyDown_Handler;
         }
 
         public void ReList()
@@ -80,6 +85,8 @@ namespace Director
                     Font = new Font(FontFamily.GenericSansSerif, 10F)
                 });
             }
+
+            ListChanged.Invoke(this, EventArgs.Empty);
         }
     }
 }
