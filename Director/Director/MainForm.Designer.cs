@@ -37,14 +37,14 @@ namespace Director
             this._infoPanel = new System.Windows.Forms.StatusStrip();
             this._infoDirectoryLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this._infoDirectoryCount = new System.Windows.Forms.ToolStripStatusLabel();
+            this._infoFileLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this._infoFileCount = new System.Windows.Forms.ToolStripStatusLabel();
             this._infoViewMode = new System.Windows.Forms.ToolStripSplitButton();
             this._infoViewDetails = new System.Windows.Forms.ToolStripMenuItem();
             this._infoViewTitle = new System.Windows.Forms.ToolStripMenuItem();
             this._infoViewList = new System.Windows.Forms.ToolStripMenuItem();
             this._infoViewSmallIcons = new System.Windows.Forms.ToolStripMenuItem();
             this._infoViewLangeIcons = new System.Windows.Forms.ToolStripMenuItem();
-            this._infoFileLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this._infoFileCount = new System.Windows.Forms.ToolStripStatusLabel();
             this._menuUp.SuspendLayout();
             this._navPanel.SuspendLayout();
             this._headersPanel.SuspendLayout();
@@ -208,6 +208,18 @@ namespace Director
             this._infoDirectoryCount.Size = new System.Drawing.Size(13, 17);
             this._infoDirectoryCount.Text = "0";
             // 
+            // _infoFileLabel
+            // 
+            this._infoFileLabel.Name = "_infoFileLabel";
+            this._infoFileLabel.Size = new System.Drawing.Size(33, 17);
+            this._infoFileLabel.Text = "Files:";
+            // 
+            // _infoFileCount
+            // 
+            this._infoFileCount.Name = "_infoFileCount";
+            this._infoFileCount.Size = new System.Drawing.Size(13, 17);
+            this._infoFileCount.Text = "0";
+            // 
             // _infoViewMode
             // 
             this._infoViewMode.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -223,6 +235,7 @@ namespace Director
             this._infoViewMode.Name = "_infoViewMode";
             this._infoViewMode.Size = new System.Drawing.Size(32, 20);
             this._infoViewMode.ToolTipText = "ViewMode";
+            this._infoViewMode.Visible = false;
             // 
             // _infoViewDetails
             // 
@@ -255,18 +268,6 @@ namespace Director
             this._infoViewLangeIcons.Name = "_infoViewLangeIcons";
             this._infoViewLangeIcons.Size = new System.Drawing.Size(180, 22);
             this._infoViewLangeIcons.Text = "LargeIcons";
-            // 
-            // _infoFileLabel
-            // 
-            this._infoFileLabel.Name = "_infoFileLabel";
-            this._infoFileLabel.Size = new System.Drawing.Size(33, 17);
-            this._infoFileLabel.Text = "Files:";
-            // 
-            // _infoFileCount
-            // 
-            this._infoFileCount.Name = "_infoFileCount";
-            this._infoFileCount.Size = new System.Drawing.Size(13, 17);
-            this._infoFileCount.Text = "0";
             // 
             // MainForm
             // 

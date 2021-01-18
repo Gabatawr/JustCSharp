@@ -29,8 +29,6 @@ namespace Director
             _nav.btnNext.MouseClick += btnNext_MouseClick;
 
             _headers.btnNew.MouseClick += btnAdd_MouseClick;
-
-            _infoViewDetails.
         }
 
         private void dirItem_DoubleClick(object sender, EventArgs eventArgs)
@@ -343,6 +341,5 @@ namespace Director
                 }
             }
         }
-
     }
 }
